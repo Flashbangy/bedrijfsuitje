@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
-	
-		
-		
-
 		<html>
 	
 		<title>Epic website XDDDD</title>
@@ -27,13 +22,13 @@
 	    <script src="js/modernizr.custom.js"></script>
 	</head>
 
-	<body>
+	<body background="img/background.jpg">
 		<div class="container">	
 			<header id="site-header">
 				<div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<div class="logo">
-							<h1><a href="index.html"><b>Doge</b> &amp; Doge</a></h1>
+							<h1><a href=""><b>Het</b> Anker</a></h1>
 						</div>
 					</div><!-- col-md-4 -->
 					<div class="col-md-8 col-sm-7 col-xs-4">
@@ -46,9 +41,9 @@
 
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   								<ul class="nav navbar-nav navbar-right">
-    								<li class="cl-effect-11"><a href="/index.php?page=login"  >Home</a></li>
-    								<li class="cl-effect-11"><a href="/index.php?page=login"  >Login</a></li>
-    								<li class="cl-effect-11"><a href="/index.php?page=signup" >Signup</a></li>
+    								<li class="cl-effect-11"><a href="index.php?page=home"  >Home</a></li>
+    								<li class="cl-effect-11"><a href="index.php?page=admin_login"  >Login</a></li>
+    								<li class="cl-effect-11"><a href="index.php?page=activiteiten" >Activiteiten</a></li>
   								</ul>
 							</div><!-- /.navbar-collapse -->
 						</nav>

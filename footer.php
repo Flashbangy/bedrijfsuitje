@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<p class="copyright">&copy; 2014 ThemeWagon.com</p>
+						<p class="copyright">&copy; Bartlomiej Filik</p>
 					</div>
 				</div>
 			</div>
@@ -24,7 +24,7 @@
 
 		<script src="js/script.js"></script>
 
-	</body>
+
 </html>
 
 
