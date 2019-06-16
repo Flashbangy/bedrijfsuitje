@@ -1,6 +1,6 @@
 	</body>
 	<footer id="site-footer">
-			<div class="container">
+			<div class="footer-container">
 				<div class="row">
 					<div class="col-md-12">
 						<p class="copyright">&copy; Bartlomiej Filik</p>

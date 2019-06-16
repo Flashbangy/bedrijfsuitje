@@ -1,13 +1,25 @@
+<main>
 
+
+
+
+<div class="container">
 <div>
-<form method="POST" action="http://localhost/bedrijsuitje/index.php?page=admin_login">
+
+<div class="panel panel-default">
+    <div class="panel-body">
+<form method="POST" action="">
   gebruikersnaam<br>
   <input type="text" name="gebruikersnaam"><br>
   wachtwoord<br>
   <input type="text" name="wachtwoord">
   <input type="submit" value="submit" name="submit"/>
 </form>
+
 </div>
+</div>
+</div>
+</main>
 <?php
 
 if(isset($_POST['submit'])){
