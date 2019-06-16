@@ -24,7 +24,7 @@
 
 		<script src="js/script.js"></script>
 
-
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </html>
 
 

@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
     $sth = $conn->prepare('DELETE FROM personeel WHERE users_id = :users_id');
@@ -18,6 +19,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'update'){
 <?php
 if(isset($_GET['action']) && $_GET['action'] == 'insert'){
     //moet nog INSERT
+
 }
 ?>
 <?php
@@ -28,6 +30,18 @@ $result = $sth->fetchAll();
 ?>
 <main>
 <div class="container">
+
+<div class="panel panel-default">
+        <div class="panel-body">
+        <br>
+            <a href="index.php?page=admin_users">Users</a><br>
+            <a href="index.php?page=admin_personeel">personeel</a><br>
+            <a href="index.php?page=admin_inschrijvingen">inschrijvingen</a><br>
+            <a href="index.php?page=admin_activiteiten">activiteiten</a><br>    
+        </div>
+    </div>
+
+
 <table>
     <tr>
         <td>Voorletters</td>

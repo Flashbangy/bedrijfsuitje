@@ -919,8 +919,3 @@ Text Domain: blackandwhite
     transform: translate(-50%, -50%);
   }
   /* Container holding the image and the text */
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
