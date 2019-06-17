@@ -2,7 +2,7 @@
 <div class="container">
 <?php
 if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
-    echo 'welcome admin';
+    echo '<h2>welcome admin</h2>';
 } else {
     header('Location: index.php?page=admin_login');
 }

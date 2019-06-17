@@ -23,8 +23,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'insert'){
 }
 ?>
 <?php
-$sth = $conn->prepare('SELECT * FROM personeel'); 
-$sth->execute();                    
+$sth = $conn->prepare('SELECT * FROM personeel');
+$sth->execute();
 $result = $sth->fetchAll();
 
 ?>
@@ -37,7 +37,7 @@ $result = $sth->fetchAll();
             <a href="index.php?page=admin_users">Users</a><br>
             <a href="index.php?page=admin_personeel">personeel</a><br>
             <a href="index.php?page=admin_inschrijvingen">inschrijvingen</a><br>
-            <a href="index.php?page=admin_activiteiten">activiteiten</a><br>    
+            <a href="index.php?page=admin_activiteiten">activiteiten</a><br>
         </div>
     </div>
 
@@ -58,7 +58,7 @@ $result = $sth->fetchAll();
                 <button type="save" class="btn btn-primary" type="Submit">Save</button>
                 </div>
 
-                
+
         </div>
     </div>
 
@@ -79,7 +79,7 @@ foreach($result as $r){
     <td><?php echo $r['voorletters'];?></td>
     <td><?php echo $r['email'];?></td>
     <td>
-        <a href="index.php?page=admin_personeel&action=delete&id=<?php echo $r['users_id'];?>">delete</a> - 
+        <a href="index.php?page=admin_personeel&action=delete&id=<?php echo $r['users_id'];?>">delete</a> -
         <a href="index.php?page=admin_personeel&action=update&id=<?php echo $r['users_id'];?>">update</a>
     </td>
 </tr>
@@ -88,4 +88,3 @@ foreach($result as $r){
 ?>
 </table>
 </div>
-

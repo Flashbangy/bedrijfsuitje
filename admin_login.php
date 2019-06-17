@@ -1,19 +1,14 @@
 <main>
-
-
-
-
 <div class="container">
 <div>
-
 <div class="panel panel-default">
     <div class="panel-body">
-<form method="POST" action="">
+<form name="login" onsubmit="return validateForm()" method="POST" action="">
   gebruikersnaam<br>
   <input type="text" name="gebruikersnaam"><br>
   wachtwoord<br>
   <input type="text" name="wachtwoord">
-  <input type="submit" value="submit" name="submit"/>
+  <input type="submit" value="Submit" name="submit"/>
 </form>
 
 </div>
