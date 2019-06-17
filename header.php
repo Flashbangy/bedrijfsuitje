@@ -31,9 +31,9 @@
 
 
 	</head>	
-
+<!--Dit is de klok in de body-->
 	<body  onload="startTime()">
-	
+	<!-- Header -->
 	<div class="header-container">	
 			<header id="site-header">
 				<div class="row">
@@ -82,9 +82,4 @@
   <div class="text"></div>
 </div>
 
-
-
-
-
-
-  </div>
+</div>

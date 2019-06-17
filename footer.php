@@ -1,30 +1,29 @@
-	</body>
-	<footer id="site-footer">
-			<div class="footer-container">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="copyright">&copy; Bartlomiej Filik</p>
-					</div>
-				</div>
-			</div>
-		</footer>
+</body>
+<footer id="site-footer">
+    <div class="footer-container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright">&copy; Bartlomiej Filik</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-		<!-- Mobile Menu -->
-		<div class="overlay overlay-hugeinc">
-			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="full-width.html">Blog</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="full-width.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
 
-		<script src="js/script.js"></script>
+<script src="js/script.js"></script>
+<!-- Dit is de knop die je weer naar boven stuurt -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </html>
-
-

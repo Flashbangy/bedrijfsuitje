@@ -1,5 +1,6 @@
 <main>
 <div class="container">
+    <!-- Dit checkt of je ingelogd bent en je krijgt welcome admin -->
 <?php
 if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
     echo '<h2>welcome admin</h2>';
@@ -8,7 +9,7 @@ if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
 }
 ?>
 
-
+<!-- Dit is de menu van databases -->
 <div class="panel panel-default">
         <div class="panel-body">
         <br>

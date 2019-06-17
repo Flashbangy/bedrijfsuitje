@@ -1,3 +1,5 @@
+//Foto display script
+
 var slideIndex = 0;
 showSlides();
 
@@ -13,6 +15,7 @@ function showSlides() {
   setTimeout(showSlides, 1500); // Change image every 1.5 seconds
 }
 
+//KLOK SCRIPT
 
 function startTime() {
   var today = new Date();
@@ -30,8 +33,7 @@ function checkTime(i) {
   return i;
 }
 
-
-// When the user scrolls down 20px from the top of the document, show the button
+// SCROLL BACK UP SCRIPT
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -48,7 +50,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
+//VALIDATIE JAVASCRIPT
 function validateForm() {
   var x = document.forms["login"]["gebruikersnaam"].value;
   if (x == "") {

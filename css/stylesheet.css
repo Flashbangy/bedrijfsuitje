@@ -2,7 +2,6 @@ html{
   scroll-behavior: smooth;
 }
 
-
 main{ 
     height: 1000px;
 }
@@ -11,14 +10,10 @@ img {
     margin-bottom: 20px;
 }
 
-
-
 .container {
     position: relative;
     color: black;
   }
-
- 
 
   * {box-sizing:border-box}
 
@@ -114,8 +109,6 @@ img {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
-
 
 #myBtn {
   display: none; /* Hidden by default */
