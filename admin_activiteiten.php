@@ -46,6 +46,8 @@ $result = $sth->fetchAll();
     <tr>
         <td>A-ID</td>
         <td>Naam</td>
+        <td>Omschrijving</td>
+        <td>Locatie</td>
         <td>Inschrijvingen</td>
         <td>Tijdstip aanvang</td>
         <td>Tijdstip einde</td>
@@ -58,6 +60,8 @@ foreach($result as $r){
 <tr>
     <td><?php echo $r['id'];?></td>
     <td><?php echo $r['naam'];?></td>
+    <td><?php echo $r['omschrijving'];?></td>
+    <td><?php echo $r['locatie'];?></td>
     <td><?php echo $r['maximaal_aantal_inschrijvingen'];?></td>
     <td><?php echo $r['tijdstip_aanvang'];?></td>
     <td><?php echo $r['tijdstip_einde'];?></td>
@@ -72,4 +76,3 @@ foreach($result as $r){
 ?>
 </table>
 </div>
-</main>

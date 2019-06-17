@@ -64,4 +64,3 @@ foreach($result as $r){
 ?>
 </table>
 </div>
-</main>
