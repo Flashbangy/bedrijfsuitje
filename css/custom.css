@@ -119,9 +119,8 @@ Text Domain: blackandwhite
   */
  
  #site-header {
-     /**
-     *   background-color: #FFF;
-     */
+     
+     background-color: #749361;
      padding: 25px 20px;
      margin-bottom: 40px;
      border-bottom: 1px solid #e7e7e7;
@@ -442,13 +441,12 @@ Text Domain: blackandwhite
   */
  
  #site-footer {
-     padding-top: 150px;
+     background-color:  #504B3A;
  }
  
  .copyright {
      text-align: center;
      padding-top: 1em;
-     margin-top: 100px;
      border-top: 1px solid #eee;
      color: #666;
  }

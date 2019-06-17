@@ -42,6 +42,30 @@ $result = $sth->fetchAll();
     </div>
 
 
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <form method="POST" action="">
+                <div class="form-group">
+                <label>Username</label>
+                <input name="gebruikersnaam" type="text" class="form-control" value="Enter your username">
+                </div>
+                <div class="form-group">
+                <label>Password</label>
+                <input name="wachtwoord" type="text" class="form-control" value="Enter your password">
+                </div>
+                <div class="form-group">
+                <button type="save" class="btn btn-primary" type="Submit">Save</button>
+                </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+
 <table>
     <tr>
         <td>Voorletters</td>
@@ -64,4 +88,4 @@ foreach($result as $r){
 ?>
 </table>
 </div>
-</main>
+

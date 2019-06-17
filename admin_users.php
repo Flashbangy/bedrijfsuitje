@@ -48,9 +48,17 @@ $result = $sth->fetchAll();
     <div class="panel panel-default">
         <div class="panel-body">
             <form method="post" action="">
-                <input name="gebruikersnaam" type="text">
-                <input name="wachtwoord" type="text">
-                <input type="submit" type="Submit Form">
+                <div class="form-group">
+                <label>Username</label>
+                <input name="gebruikersnaam" type="text" value="Enter your username">
+                </div>
+                <div class="form-group">
+                <label>Password</label>
+                <input name="wachtwoord" type="text" value="Enter your password">
+                </div>
+                <div class="form-group">
+                <button type="save" type="Submit">Save</button>
+                </div>
 
                 
         </div>
