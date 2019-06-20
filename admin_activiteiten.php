@@ -73,6 +73,13 @@ $res = $res[0];
 ?>
                 <main>
                     <div class="container">
+                    <?php
+                    if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
+                    echo '<h2>welcome admin</h2>';
+                    } else {
+                    header('Location: index.php?page=admin_login');
+                    }
+?>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>

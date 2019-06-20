@@ -24,11 +24,16 @@ if(isset($_GET['action']) && $_GET['action'] == 'insert'){
 $sth = $conn->prepare('SELECT * FROM inschrijvingen'); 
 $sth->execute();                    
 $result = $sth->fetchAll();
-
 ?>
                 <main>
                     <div class="container">
-
+                    <?php
+                    if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
+                    echo '<h2>welcome admin</h2>';
+                    } else {
+                    header('Location: index.php?page=admin_login');
+                    }
+?>
                     <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
@@ -42,30 +47,6 @@ $result = $sth->fetchAll();
                                 <br>
                             </div>
                         </div>
-                        
-
-                        <div class="panel panel-default">
-
-                            <div class="panel-body">
-                                <form method="POST" action="">
-                                    <div class="form-group">
-                                        <label>Id</label>
-                                        <input name="id" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["id"];}?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Activiteit</label>
-                                        <input name="activiteiten_id" type="text" class="form-control" value="<?php echo $res["activiteiten_id"]?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Personeelsnummer</label>
-                                        <input name="users_id" type="text" class="form-control" value="<?php echo $res["users_id"]?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <input name="userID" type="text" class="form-control hidden" value="<?php echo $res["users_id"]?>">    
-                                        <button class="btn btn-primary" type="Submit">update</button>
-                                    </div>
-                                 </div>
-                            </div>
                         <!-- Table met alle info -->
                         <table>
                             <tr>
@@ -88,8 +69,7 @@ $result = $sth->fetchAll();
                                         <?php echo $r['users_id'];?>
                                     </td>
                                     <td>
-                                        <a href="index.php?page=admin_inschrijvingen&action=delete&id=<?php echo $r['users_id'];?>">delete</a> -
-                                        <a href="index.php?page=admin_inschrijvingen&action=update&id=<?php echo $r['users_id'];?>">update</a>
+                                        <a href="index.php?page=admin_inschrijvingen&action=delete&id=<?php echo $r['users_id'];?>">delete</a>
                                     </td>
                                 </tr>
                                 <?php

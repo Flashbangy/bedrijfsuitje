@@ -1,12 +1,11 @@
 <?php
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
-    $sth = $conn->prepare('DELETE FROM users WHERE users_id = :users_id');
-    $sth->execute(array(':users_id' => $_GET['id']));
+    $sth = $conn->prepare('DELETE FROM users WHERE id = :id');
+    $sth->execute(array(':id' => $_GET['id']));
     header('Location: index.php?page=admin_users');
     exit();
 }
 ?>
-
     <?php
 if(isset($_POST['update'])){
     $conn->prepare('UPDATE `users` SET 
@@ -35,7 +34,7 @@ if(isset($_POST['update'])){
                   ->execute([ 
                            $_POST['gebruikersnaam'],
                            $_POST['wachtwoord'],
-                           $_POST['rol']
+                           $_POST['rol'],
                   ]);
                   var_dump($_POST);
         }
@@ -54,6 +53,14 @@ if(isset($_GET['id'])){
 ?>
                 <main>
                     <div class="container">
+                    <?php
+                    if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
+                    echo '<h2>welcome admin</h2>';
+                    } else {
+                    header('Location: index.php?page=admin_login');
+                    }
+?>
+
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
@@ -72,7 +79,7 @@ if(isset($_GET['id'])){
                                 <form method="POST" action="">
                                     <div class="form-group">
                                         <label>Gebruikersnaam</label>
-                                        <input name="gebruikersnaam" type="text" class="form-control hidden" value="<?php if(isset($res["gebruikersnaam"])) {echo $res["gebruikersnaam"];}?>">
+                                        <input name="gebruikersnaam" type="text" class="form-control" value="<?php if(isset($res["gebruikersnaam"])) {echo $res["gebruikersnaam"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Wachtwoord</label>
@@ -80,9 +87,10 @@ if(isset($_GET['id'])){
                                     </div>
                                     <div class="form-group">
                                         <label>Rol</label>
-                                        <input name="achternaam" type="text" class="form-control" value="<?php if(isset($res["rol"])) {echo $res["rol"];}?>">
+                                        <input name="rol" type="text" class="form-control" value="<?php if(isset($res["rol"])) {echo $res["rol"];}?>">
                                     </div>
                                     <div class="form-group"> 
+                                    <input name="id" type="text" class="form-control hidden" value="<?php if(isset($res["id"])) {echo $res["id"];}?>">   
                                          <button name=update class="btn btn-primary" type="Submit">Update</button>
                                          <input name="insert" class="btn btn-primary" type="Submit" value="insert"/>
                                     </div>
@@ -94,6 +102,7 @@ if(isset($_GET['id'])){
                                 <td>Id</td>
                                 <td>Naam</td>
                                 <td>Wachtwoord</td>
+                                <td>Rol</td>
                                 <td>Acties</td>
                             </tr>
                             <?php
@@ -108,6 +117,9 @@ if(isset($_GET['id'])){
                                     </td>
                                     <td>
                                         <?php echo $r['wachtwoord'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $r['rol'];?>
                                     </td>
                                     <td>
                                         <a href="index.php?page=admin_users&action=delete&id=<?php echo $r['id'];?>">delete</a> -
