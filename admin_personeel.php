@@ -64,6 +64,7 @@ $res = $res[0];
 
 ?>
                 <main>
+                    <!-- sessie check -->
                     <div class="container">
                     <?php
                     if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
@@ -74,6 +75,7 @@ $res = $res[0];
 ?>
 
                         <div class="panel panel-default">
+                            <!-- menu -->
                             <div class="panel-body">
                                 <br>
                                 <a href="index.php?page=admin_users">Users</a>
@@ -88,7 +90,7 @@ $res = $res[0];
                         </div>
 
                         <div class="panel panel-default">
-
+                            <!-- form -->
                             <div class="panel-body">
                                 <form method="POST" action="">
                                     <div class="form-group">

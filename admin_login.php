@@ -1,4 +1,5 @@
 <main>
+  <!-- login form -->
     <div class="container">
         <div>
             <div class="panel panel-default">
@@ -6,10 +7,10 @@
                     <form name="login" onsubmit="return validateForm()" method="POST" action="">
                         gebruikersnaam
                         <br>
-                        <input type="text" name="gebruikersnaam">
+                        <input type="text" required name="gebruikersnaam">
                         <br> wachtwoord
                         <br>
-                        <input type="text" name="wachtwoord">
+                        <input type="text" required name="wachtwoord">
                         <input type="submit" value="Submit" name="submit" />
                     </form>
 

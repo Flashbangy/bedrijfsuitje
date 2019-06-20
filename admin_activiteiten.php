@@ -55,7 +55,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
                            $_POST['tijdstip_einde'],
                            $_POST['deadline_inschrijving']
                   ]);
-                  var_dump($_POST);
+
         }
 ?>
             <?php
@@ -72,6 +72,7 @@ $res = $res[0];
 
 ?>
                 <main>
+                    <!-- session code -->
                     <div class="container">
                     <?php
                     if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
@@ -81,6 +82,7 @@ $res = $res[0];
                     }
 ?>
                         <div class="panel panel-default">
+                            <!-- menu -->
                             <div class="panel-body">
                                 <br>
                                 <a href="index.php?page=admin_users">Users</a>
@@ -95,6 +97,7 @@ $res = $res[0];
                         </div>
                         <div class="panel panel-default">
                         <div class="panel-body">
+                            <!-- form -->
                                 <form method="POST" action="">
                                     <div class="form-group">
                                         <label>Naam activiteit</label>

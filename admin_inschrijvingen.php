@@ -1,4 +1,5 @@
 <?php
+//DELETE CODE
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
     $sth = $conn->prepare('DELETE FROM inschrijvingen WHERE users_id = :users_id');
     $sth->execute(array(':users_id' => $_GET['id']));
@@ -8,16 +9,16 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
 ?>
 
     <?php
+    //UPDATE CODE
 if(isset($_GET['action']) && $_GET['action'] == 'update'){
     $sth = $conn->prepare('SELECT FROM inschrijvingen WHERE users_id = :users_id');
     $sth->execute(array(':users_id' => $_GET['id']));
     $res = $sth->fetchAll();
-    //moet nog UPDATE
 }
 ?>
         <?php
+        //INSERT CODE
 if(isset($_GET['action']) && $_GET['action'] == 'insert'){
-    //moet nog INSERT
 }
 ?>
             <?php
@@ -27,6 +28,7 @@ $result = $sth->fetchAll();
 ?>
                 <main>
                     <div class="container">
+                        <!-- session check -->
                     <?php
                     if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
                     echo '<h2>welcome admin</h2>';
@@ -35,6 +37,7 @@ $result = $sth->fetchAll();
                     }
 ?>
                     <div class="panel panel-default">
+                        <!-- menu -->
                             <div class="panel-body">
                                 <br>
                                 <a href="index.php?page=admin_users">Users</a>

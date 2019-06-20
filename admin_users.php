@@ -1,4 +1,5 @@
 <?php
+//DELETE CODE
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
     $sth = $conn->prepare('DELETE FROM users WHERE id = :id');
     $sth->execute(array(':id' => $_GET['id']));
@@ -6,7 +7,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
     exit();
 }
 ?>
-    <?php
+<?php
+    //UPDATE CODE
 if(isset($_POST['update'])){
     $conn->prepare('UPDATE `users` SET 
                     `gebruikersnaam`= ?,
@@ -52,6 +54,7 @@ if(isset($_GET['id'])){
     }
 ?>
                 <main>
+                     <!-- sessie check -->
                     <div class="container">
                     <?php
                     if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
@@ -60,7 +63,7 @@ if(isset($_GET['id'])){
                     header('Location: index.php?page=admin_login');
                     }
 ?>
-
+                        <!-- menu -->
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
@@ -76,6 +79,7 @@ if(isset($_GET['id'])){
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                 <!-- form -->
                                 <form method="POST" action="">
                                     <div class="form-group">
                                         <label>Gebruikersnaam</label>
