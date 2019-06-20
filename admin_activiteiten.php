@@ -1,88 +1,129 @@
 <?php
+//DELETE CODE
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
-    $sth = $conn->prepare('DELETE FROM personeel WHERE users_id = :users_id');
-    $sth->execute(array(':users_id' => $_GET['id']));
-    header('Location: index.php?page=admin_personeel');
+    $sth = $conn->prepare('DELETE FROM activiteiten WHERE id = :id');
+    $sth->execute(array(':id' => $_GET['id']));
+    header('Location: index.php?page=admin_activiteiten');
     exit();
 }
 ?>
 
     <?php
-if(isset($_GET['action']) && $_GET['action'] == 'update'){
-    $sth = $conn->prepare('SELECT FROM activiteiten WHERE users_id = :users_id');
-    $sth->execute(array(':users_id' => $_GET['id']));
-    $res = $sth->fetchAll();
-    //moet nog UPDATE
-}
+    //UPDATE CODE
+    if(isset($_POST['update'])){
+        $conn->prepare('UPDATE `activiteiten` SET 
+                        `naam`= ?,
+                        `omschrijving`= ?,
+                        `locatie`= ?,
+                        `maximaal_aantal_inschrijvingen`= ?,
+                        `tijdstip_aanvang`= ?,
+                        `tijdstip_einde`= ?,
+                        `deadline_inschrijving`= ?
+                        WHERE id = ?')
+              ->execute([ 
+                        $_POST['naam'],
+                        $_POST['omschrijving'],
+                        $_POST['locatie'],
+                        $_POST['maximaal_aantal_inschrijvingen'],
+                        $_POST['tijdstip_aanvang'],
+                        $_POST['tijdstip_einde'],
+                        $_POST['deadline_inschrijving'],
+                        intval($_GET['id'])
+              ]);
+    }
 ?>
         <?php
-if(isset($_GET['action']) && $_GET['action'] == 'insert'){
-    //moet nog INSERT
-}
+        //INSERT CODE
+        if(isset($_POST['insert'])){
+            $conn->prepare("INSERT INTO `activiteiten` (
+                                `naam`,
+                                `omschrijving`,
+                                `locatie`,
+                                `maximaal_aantal_inschrijvingen`,
+                                `tijdstip_aanvang`,
+                                `tijdstip_einde`,
+                                `deadline_inschrijving`
+                            ) 
+                            VALUES (?,?,?,?,?,?,?)
+                            ")
+                  ->execute([ 
+                           $_POST['naam'],
+                           $_POST['omschrijving'],
+                           $_POST['locatie'],
+                           $_POST['maximaal_aantal_inschrijvingen'],
+                           $_POST['tijdstip_aanvang'],
+                           $_POST['tijdstip_einde'],
+                           $_POST['deadline_inschrijving']
+                  ]);
+                  var_dump($_POST);
+        }
 ?>
             <?php
 $sth = $conn->prepare('SELECT * FROM activiteiten'); 
 $sth->execute();                    
 $result = $sth->fetchAll();
 
+if(isset($_GET['id'])){
+$sth = $conn->prepare('SELECT * FROM activiteiten where id = ' . intval($_GET['id']));
+$sth->execute();
+$res = $sth->fetchAll();
+$res = $res[0];
+}
+
 ?>
                 <main>
                     <div class="container">
-
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
                                 <a href="index.php?page=admin_users">Users</a>
                                 <br>
-                                <a href="index.php?page=admin_personeel">personeel</a>
+                                <a href="index.php?page=admin_personeel">Personeel</a>
                                 <br>
-                                <a href="index.php?page=admin_inschrijvingen">inschrijvingen</a>
+                                <a href="index.php?page=admin_inschrijvingen">Inschrijvingen</a>
                                 <br>
-                                <a href="index.php?page=admin_activiteiten">activiteiten</a>
+                                <a href="index.php?page=admin_activiteiten">Activiteiten</a>
                                 <br>
                             </div>
                         </div>
-                        
                         <div class="panel panel-default">
-
                         <div class="panel-body">
                                 <form method="POST" action="">
                                     <div class="form-group">
-                                        <label>Id</label>
-                                        <input name="id" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["id"];}?>">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Naam activiteit</label>
-                                        <input name="naam" type="text" class="form-control" value="<?php echo $res["naam"]?>">
+                                        <input name="naam" type="text" class="form-control" value="<?php if(isset($res["naam"])) {echo $res["naam"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>omschrijving</label>
-                                        <input name="omschrijving" type="text" class="form-control" value="<?php echo $res["omschrijving"]?>">
+                                        <input name="omschrijving" type="text" class="form-control" value="<?php if(isset($res["omschrijving"])) {echo $res["omschrijving"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Locatie</label>
-                                        <input name="locatie" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["locatie"];}?>">
+                                        <input name="locatie" type="text" class="form-control" value="<?php if(isset($res["locatie"])) {echo $res["locatie"];}?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Max inschrijvingen</label>
-                                        <input name="maximaal_aantal_inschrijvingen" type="text" class="form-control" value="<?php echo $res["maximaal_aantal_inschrijvingen"]?>">
+                                        <label>Max inschrijvingen</label>  
+                                        <input name="maximaal_aantal_inschrijvingen" type="text" class="form-control" value="<?php if(isset($res["maximaal_aantal_inschrijvingen"])) {echo $res["maximaal_aantal_inschrijvingen"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Tijdstip aanvang</label>
-                                        <input name="tijdstip_aanvang" type="text" class="form-control" value="<?php echo $res["tijdstip_aanvang"]?>">
+                                        <input name="tijdstip_aanvang" type="text" class="form-control" value="<?php if(isset($res["tijdstip_aanvang"])) {echo $res["tijdstip_aanvang"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Tijdstip einde</label>
-                                        <input name="tijdstip_einde" type="text" class="form-control" value="<?php echo $res["tijdstip_einde"]?>">
+                                        <input name="tijdstip_einde" type="text" class="form-control" value="<?php if(isset($res["tijdstip_einde"])) {echo $res["tijdstip_einde"];}?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Deadline</label>
-                                        <input name="deadline_inschrijving" type="text" class="form-control" value="<?php echo $res["deadline_inschrijving"]?>">
+                                        <input name="deadline_inschrijving" type="text" class="form-control" value="<?php if(isset($res["deadline_inschrijving"])) {echo $res["deadline_inschrijving"];}?>">
                                     </div>
                                     <div class="form-group">
-                                        <input name="userID" type="text" class="form-control hidden" value="<?php echo $res["users_id"]?>">    
-                                        <button class="btn btn-primary" type="Submit">update</button>
+                                        <input name="id" type="text" class="form-control hidden" value="<?php if(isset($res["id"])) {echo $res["id"];}?>">    
                                      </div>
+                                     <div class="form-group">
+                                         <button name=update class="btn btn-primary" type="Submit">Update</button>
+                                         <input name="insert" class="btn btn-primary" type="Submit" value="insert"/>
+                                        </div>
                              </div>
                     </div>
                         <!-- Table met alle info -->

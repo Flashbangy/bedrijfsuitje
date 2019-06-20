@@ -30,8 +30,7 @@ if(isset($_POST['update'])){
         <?php
         //INSERT CODE
 if(isset($_POST['insert'])){
-    $conn->prepare("insert into 
-                    `personeel` (
+    $conn->prepare("INSERT INTO `personeel` (
                         `users_id`,
                         `voorletters`,
                         `tussenvoegsel`,
@@ -110,7 +109,7 @@ $res = $res[0];
                                     </div>
                                     <div class="form-group">
                                         <button name="update" class="btn btn-primary" type="Submit" >Update</button>
-                                        <input name="insert" class="btn btn-primary" type="submit" value="insert"/>
+                                        <input name="insert" class="btn btn-primary" type="Submit" value="insert"/>
                                     </div>
                              </div>
                         </div>

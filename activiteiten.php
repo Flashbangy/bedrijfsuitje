@@ -72,7 +72,7 @@ $result = $sth->fetchAll();
                                             <?php echo $r['deadline_inschrijving'];?>
                                         </td>
                                         <td>
-                                            <a href="index.php?page=admin_activiteiten&action=inschrijven&id=<?php echo $r['id'];?>">Inschrijven</a>
+                                            <a href="index.php?page=inschrijven&action=inschrijven&id=<?php echo $r['id'];?>">Inschrijven</a>
                                         </td>
                                     </tr>
                                     <?php

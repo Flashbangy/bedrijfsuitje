@@ -29,16 +29,16 @@ $result = $sth->fetchAll();
                 <main>
                     <div class="container">
 
-                        <div class="panel panel-default">
+                    <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
                                 <a href="index.php?page=admin_users">Users</a>
                                 <br>
-                                <a href="index.php?page=admin_personeel">personeel</a>
+                                <a href="index.php?page=admin_personeel">Personeel</a>
                                 <br>
-                                <a href="index.php?page=admin_inschrijvingen">inschrijvingen</a>
+                                <a href="index.php?page=admin_inschrijvingen">Inschrijvingen</a>
                                 <br>
-                                <a href="index.php?page=admin_activiteiten">activiteiten</a>
+                                <a href="index.php?page=admin_activiteiten">Activiteiten</a>
                                 <br>
                             </div>
                         </div>
