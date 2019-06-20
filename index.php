@@ -7,7 +7,7 @@
 include_once('header.php');
 include_once('dbconfig.php');
 if(isset($_GET['page']) && $_GET['page'] != ''){
-    $pages = ['signup', 'home','activiteiten','admin', 'admin_login','admin_personeel','admin_inschrijvingen','admin_activiteiten','admin_users'];
+    $pages = ['signup', 'home','activiteiten','admin', 'admin_login','admin_personeel','admin_inschrijvingen','admin_activiteiten','admin_users','inschrijven','admin_export_pdf'];
     /**
      * met array fuction check ik met GET of het site bestaat
      */

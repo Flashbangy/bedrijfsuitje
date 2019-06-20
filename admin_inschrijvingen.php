@@ -42,12 +42,36 @@ $result = $sth->fetchAll();
                                 <br>
                             </div>
                         </div>
+                        
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <form method="POST" action="">
+                                    <div class="form-group">
+                                        <label>Id</label>
+                                        <input name="id" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["id"];}?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Activiteit</label>
+                                        <input name="activiteiten_id" type="text" class="form-control" value="<?php echo $res["activiteiten_id"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Personeelsnummer</label>
+                                        <input name="users_id" type="text" class="form-control" value="<?php echo $res["users_id"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="userID" type="text" class="form-control hidden" value="<?php echo $res["users_id"]?>">    
+                                        <button class="btn btn-primary" type="Submit">update</button>
+                                    </div>
+                                 </div>
+                            </div>
                         <!-- Table met alle info -->
                         <table>
                             <tr>
                                 <td>Id</td>
                                 <td>Activiteit</td>
-                                <td>user-id</td>
+                                <td>Personeels-nummer</td>
                                 <td>Acties</td>
                             </tr>
                             <?php

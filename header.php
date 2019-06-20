@@ -51,7 +51,7 @@
   								<ul class="nav navbar-nav navbar-right">
     								<li class="cl-effect-11"><a href="index.php?page=home"  >Home</a></li>
     								<li class="cl-effect-11"><a href="index.php?page=admin_login"  >Login</a></li>
-									<li class="cl-effect-11"><a href="index.php?page=activiteiten" >Activiteiten</a></li>
+									<li class="cl-effect-11"><a href="index.php?page=inschrijven" >Inschrijven</a></li>
   									</a>
 									
   								</ul>

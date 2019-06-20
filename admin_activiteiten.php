@@ -42,6 +42,49 @@ $result = $sth->fetchAll();
                                 <br>
                             </div>
                         </div>
+                        
+                        <div class="panel panel-default">
+
+                        <div class="panel-body">
+                                <form method="POST" action="">
+                                    <div class="form-group">
+                                        <label>Id</label>
+                                        <input name="id" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["id"];}?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Naam activiteit</label>
+                                        <input name="naam" type="text" class="form-control" value="<?php echo $res["naam"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>omschrijving</label>
+                                        <input name="omschrijving" type="text" class="form-control" value="<?php echo $res["omschrijving"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Locatie</label>
+                                        <input name="locatie" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["locatie"];}?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Max inschrijvingen</label>
+                                        <input name="maximaal_aantal_inschrijvingen" type="text" class="form-control" value="<?php echo $res["maximaal_aantal_inschrijvingen"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tijdstip aanvang</label>
+                                        <input name="tijdstip_aanvang" type="text" class="form-control" value="<?php echo $res["tijdstip_aanvang"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tijdstip einde</label>
+                                        <input name="tijdstip_einde" type="text" class="form-control" value="<?php echo $res["tijdstip_einde"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Deadline</label>
+                                        <input name="deadline_inschrijving" type="text" class="form-control" value="<?php echo $res["deadline_inschrijving"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="userID" type="text" class="form-control hidden" value="<?php echo $res["users_id"]?>">    
+                                        <button class="btn btn-primary" type="Submit">update</button>
+                                     </div>
+                             </div>
+                    </div>
                         <!-- Table met alle info -->
                         <table>
                             <tr>

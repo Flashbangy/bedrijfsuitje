@@ -9,7 +9,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
 
     <?php
 if(isset($_GET['action']) && $_GET['action'] == 'update'){
-    $sth = $conn->prepare('SELECT FROM users WHERE users_id = :users_id');
+    $sth = $conn->prepare('SELECT FROM users WHERE id = :users_id');
     $sth->execute(array(':users_id' => $_GET['id']));
     $res = $sth->fetchAll();
     //moet nog UPDATE
@@ -30,7 +30,6 @@ $result = $sth->fetchAll();
 ?>
                 <main>
                     <div class="container">
-
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
@@ -44,6 +43,27 @@ $result = $sth->fetchAll();
                                 <br>
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form method="POST" action="">
+                                    <div class="form-group">
+                                        <label>ID</label>
+                                        <input name="voorletters" type="text" class="form-control" value="<?php if(isset($res)) {echo $res["id"];}?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Naam</label>
+                                        <input name="tussenvoegsel" type="text" class="form-control" value="<?php echo $res["gebruikersnaam"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>wachtwoord</label>
+                                        <input name="achternaam" type="text" class="form-control" value="<?php echo $res["wachtwoord"]?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="userID" type="text" class="form-control hidden" value="<?php echo $res["id"]?>">    
+                                        <button class="btn btn-primary" type="Submit">update</button>
+                                    </div>
+                                 </div>
+                            </div>
                         <!-- Table met alle info -->
                         <table>
                             <tr>
@@ -67,7 +87,8 @@ $result = $sth->fetchAll();
                                     </td>
                                     <td>
                                         <a href="index.php?page=admin_users&action=delete&id=<?php echo $r['id'];?>">delete</a> -
-                                        <a href="index.php?page=admin_users&action=update&id=<?php echo $r['id'];?>">update</a>
+                                        <a href="index.php?page=admin_users&action=update&id=<?php echo $r['id'];?>">update</a> -
+                                        <a href="index.php?page=admin_users&action=insert&id=<?php echo $r['id'];?>">insert</a>
                                     </td>
                                 </tr>
                                 <?php
