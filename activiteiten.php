@@ -29,6 +29,7 @@ if ($sth->rowCount() == 1) {
 
 ?>
                     <?php
+//SELECT CODE
 $sth = $conn->prepare('SELECT * FROM activiteiten'); 
 $sth->execute();                    
 $result = $sth->fetchAll();

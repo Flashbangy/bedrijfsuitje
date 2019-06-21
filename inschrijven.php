@@ -1,4 +1,3 @@
-
 <?php
     include_once 'dbconfig.php';
 
@@ -24,5 +23,4 @@ if ($sth->rowCount() == 1) {
 } else {
   echo 'Deze activiteit bestaat niet';
 }
-
 ?>

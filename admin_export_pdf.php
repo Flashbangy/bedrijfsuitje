@@ -1,10 +1,7 @@
 <?php
+//PDF configuratie code
 include_once('dbconfig.php');
-/*if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
-    echo '<h2>welcome admin</h2>';
-} else {
-    header('Location: index.php?page=admin_login');
-}*/
+
 define('FPDF_FONTPATH','font/');
 include_once('fpdf.php');
 $pdf = new FPDF();

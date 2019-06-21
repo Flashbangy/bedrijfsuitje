@@ -59,6 +59,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
         }
 ?>
             <?php
+//SELECT CODE
 $sth = $conn->prepare('SELECT * FROM activiteiten'); 
 $sth->execute();                    
 $result = $sth->fetchAll();

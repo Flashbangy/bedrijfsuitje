@@ -1,4 +1,4 @@
-<!-- 404 code -->
+<!-- 404 message -->
 
 oof, something wrong happend :/
 

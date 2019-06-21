@@ -31,7 +31,6 @@ if(isset($_POST['submit'])){
                             WHERE gebruikersnaam = :gebruikersnaam');                     
     $sth->execute(array(':gebruikersnaam' => $_POST['gebruikersnaam']));
     $res = $sth->fetchAll();
-    //var_dump($res[0]['wachtwoord']);
     if (password_verify($_POST['wachtwoord'], $res[0]['wachtwoord'])) {
       $_SESSION['id'] = $res[0]['id'];
       $_SESSION['gebruikersnaam'] = $res[0]['gebruikersnaam'];
