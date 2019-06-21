@@ -39,8 +39,7 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<div class="logo">
-						<h1><img src="img/ankerlogo.png" alt="ankerlogo" height="75px" >
-							<a href=""><b>Het</b> Anker</a></h1>
+							<h1><a href=""><b> Het </b> Anker </a></h1>
 						</div>
 						<div id="txt"></div>
 					</div>
