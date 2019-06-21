@@ -13,9 +13,14 @@ if(isset($_SESSION) && $_SESSION['gebruikersnaam'] == 'admin'){
 <div class="panel panel-default">
         <div class="panel-body">
         <br>
+            <a href="admin_export_pdf">Inschrijvingen PDF</a><br>
+            <br>
             <a href="index.php?page=admin_users">Users</a><br>
+            <br>
             <a href="index.php?page=admin_personeel">personeel</a><br>
+            <br>
             <a href="index.php?page=admin_inschrijvingen">inschrijvingen</a><br>
+            <br>
             <a href="index.php?page=admin_activiteiten">activiteiten</a><br>    
         </div>
     </div>
